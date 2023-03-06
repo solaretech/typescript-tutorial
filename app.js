@@ -1,15 +1,21 @@
-var person = {
-    name: 'Kazuki',
-    age: 33,
-    hobbies: ['Sports', 'Cooking'],
-    role: [2, 'author']
-};
-// person.role.push('admin');
-// person.role[1] = 'aaa';
-person.role = [0, 'admin', 'user'];
-var favoriteActivities;
-favoriteActivities = ['Sports'];
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+function combine(input1, input2, resultConversion) {
+    var result;
+    if ((typeof input1 === 'number' && typeof input2 === 'number') || resultConversion == 'as-number') {
+        result = +input1 + +input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+    // if (resultConversion === 'as-number') {
+    //   return +result;
+    // } else {
+    //   return result.toString();
+    // }
 }
+var combinedAges = combine(30, 26, 'as-number');
+console.log(combinedAges);
+var combinedStringAges = combine('30', '26', 'as-number');
+console.log(combinedStringAges);
+var combinedNames = combine('Max', 'Anna', 'as-text');
+console.log(combinedNames);
